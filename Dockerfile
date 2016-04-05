@@ -21,4 +21,4 @@ ENV BASIC_AUTH_PASSWORD password
 
 COPY files/basic_auth_users.tmpl /etc/nginx/basic_auth_users.tmpl
 
-CMD ["render", "/etc/nginx/nginx.conf", "--", "nginx"]
+CMD ["render", "/etc/nginx/nginx.conf", "/etc/nginx/basic_auth_users", "--", "nginx"]
