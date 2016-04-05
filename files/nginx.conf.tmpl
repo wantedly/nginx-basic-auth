@@ -44,7 +44,7 @@ http {
     limit_req_zone $binary_remote_addr zone=default:10m rate=1r/s;
 
     server {
-        listen 8080;
+        listen 80;
         server_name {{ var "SERVER_NAME" }};
         client_max_body_size 50M;
 
@@ -81,15 +81,6 @@ http {
             proxy_method HEAD;
             proxy_intercept_errors on;
             proxy_pass {{ var "BACKEND_URL" }};
-        }
-    }
-
-    server {
-        listen 8090;
-
-        location /status {
-            stub_status on;
-            access_log off;
         }
     }
 }
