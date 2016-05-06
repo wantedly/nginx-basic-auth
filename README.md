@@ -7,6 +7,21 @@ Nginx to add basic auth functionality to the backend
 
 ## How to use
 
+At first, generate `your_auth_password` from `htpasswd` command.
+
+```bash
+$ htpasswd -c .htpasswd hoge
+New password:
+Re-type new password:
+Adding password for user hoge
+
+$ cat .htpasswd
+hoge:$apr1$RQ5Y56MB$ZssnUWsCOytPU8WxXTFcs.
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```
+
+Then launch Docker container.
+
 ```
 $ docker run -d --rm \
   -p 80:80 \
