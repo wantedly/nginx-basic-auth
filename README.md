@@ -7,7 +7,7 @@ Nginx to add basic auth functionality to the backend
 
 ## How to use
 
-At first, generate `your_auth_password` from `htpasswd` command.
+At first, generate `your_auth_password` by `htpasswd` command.
 
 ```bash
 $ htpasswd -c .htpasswd hoge
